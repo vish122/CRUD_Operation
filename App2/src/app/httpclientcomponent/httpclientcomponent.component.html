@@ -1,0 +1,28 @@
+<h3>From: httpclientservice</h3>
+<!-- <h1>{{title}}</h1> -->
+<div>
+    <ul *ngFor="let e of birds">
+        <li>{{"ID: "+ e.ID}}</li>
+        <li>{{"Name: "+ e.Name}}</li>
+        <li>{{"Type: "+e.Type}}</li>
+        <li>{{"ScientificName: "+ e.ScientificName}}</li>
+       
+    </ul>
+    <h2 *ngIf='!birds1'>No Information to display.</h2>
+</div>
+<h3>{{errorMsg}}</h3>
+
+
+<!-- <h1>{{title}}</h1>
+<div *ngFor='let e of data'>
+    <ul>
+        <li>{{e.id}}</li>
+        <li>{{e.email}}</li>
+        <li>{{e.first_name}}</li>
+        <li>{{e.last_name}}</li>
+      
+    </ul>
+</div> -->
+<hr>
+<app-res></app-res>
+

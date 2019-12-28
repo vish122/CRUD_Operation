@@ -1,0 +1,38 @@
+<h1>Vote tracker</h1>
+
+<table>
+    <thead>
+        
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Annual Salary</th>
+            <th>Position</th>
+            <th>Designation</th>
+            <th>Experience in Yrs</th>
+            <th>Date of Birth</th>
+            <th>Click to Vote</th>
+            
+    </thead>
+
+    <tbody>
+        <tr *ngFor='let e of emp' >
+                <td>{{e.code}}</td>
+                <td>{{e.name | titlecase| salutation:e.gender  }}</td>
+                <td>{{e.gender | titlecase }}</td>
+                <td>{{e.salary | currency:'INR':true}}</td>
+                <td>{{e.pos | position:e.exp }}</td>
+                <td>{{e.deg}}</td>
+                <td>{{e.exp}}</td>
+                <td>{{e.dob | date:shortDate | uppercase}}</td>
+                <td><button (click)='voteA()' [disabled]='Isdisabled'>Agree</button>
+                    <button (click)='voteB()' [disabled]='Isdisabled'>Disagree</button></td>
+            
+        </tr>
+        <tr *ngIf='!emp'>
+            <td colspan="9">No Voters to display</td>
+        </tr>
+    </tbody>
+    <h2>Total Agree: {{votA}}</h2>
+    <h2>Total Disagree: {{votB}}</h2>
+</table>

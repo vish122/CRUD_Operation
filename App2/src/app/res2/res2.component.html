@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <tr>
+            
+        </tr>
+    </thead>
+    <tr *ngIf='newres'>
+        <li><img [src]='newres.avatar'></li>
+        <li>{{"Id: "+newres.id}}</li>
+        <li>{{"First Name: "+newres.first_name}}</li>
+        <li>{{"Last Name: "+newres.last_name}}</li>
+        <li>{{"Email Id: "+newres.email}}</li>
+        
+       
+    </tr>
+</table>
+
+
+
+<!-- <ul *ngIf="newres">
+        <li>{{newres.id}}</li>
+        <li>{{newres.email}}</li>
+        <li>{{newres.first_name}}</li>
+        <li>{{newres.last_name}}</li>
+        <li><img src="{{newres.avatar}}"></li>
+</ul>
+
+<br> -->
+
+
+<input type="button" class="btn btn-primary" value="Back" (click)="backbutton()">

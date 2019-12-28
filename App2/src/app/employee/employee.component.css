@@ -1,0 +1,10 @@
+table,th, td {
+    border: 1px solid blue;
+    border-collapse: collapse;
+    text-align: center;
+   
+} 
+
+thead {
+    color: blue;
+}

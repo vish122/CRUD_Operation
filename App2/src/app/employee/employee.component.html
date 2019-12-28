@@ -1,0 +1,50 @@
+<app-employee-list [all]='allEmp()'
+            [male]="maleEmp()"
+            [female]="femaleEmp()"
+            (Rb)="PRbChange($event)">
+</app-employee-list>
+
+<br/><br/>
+
+
+<table>
+    <thead>
+        
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Annual Salary</th>
+            <th>Position</th>
+            <th>Designation</th>
+            <th>Experience in Yrs</th>
+            <th>Date of Birth</th>
+            
+    </thead>
+
+    <tbody>
+        <ng-container  *ngFor='let e of employee' >
+        <tr *ngIf="selected=='All' || selected==e.gender" >
+                <td>
+                  <a [routerLink]="['/emp',e.code]">{{e.code}}</a>
+                </td>
+                <td>{{e.name | titlecase| salutation:e.gender }}</td>
+                <td>{{e.gender | titlecase }}</td>
+                <td>{{e.salary | currency:'USD':true}}</td>
+                <td>{{e.pos | position:e.exp }}</td>
+                <td>{{e.deg}}</td>
+                <td>{{e.exp}}</td>
+                <td>{{e.dob | date:shortDate | uppercase}}</td>
+        </tr>
+        <tr *ngIf="!employee">
+            <td colspan="5">No employees to display</td>
+        </tr>
+    </ng-container>
+    </tbody>
+</table>
+<hr>
+
+<!-- <app-httpcomponent></app-httpcomponent> -->
+<!-- <app-httpclientcomponent></app-httpclientcomponent> -->
+
+
+

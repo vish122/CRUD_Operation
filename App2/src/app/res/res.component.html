@@ -1,0 +1,19 @@
+<h1>{{errorMsg}}</h1>
+<h6>Page: {{n}}</h6>
+
+<table>
+    <thead>
+        <tr>
+            
+        </tr>
+    </thead>
+    <tr *ngFor='let r of res.data'>
+        <td>
+         <a [routerLink]="['/res',r.id]"> {{r.id}} </a>
+        </td>
+        <td>{{r.email}}</td>
+        <td>{{r.first_name}}</td>
+        <td>{{r.last_name}}</td>
+        <td><img [src]='r.avatar'></td>
+    </tr>
+</table>

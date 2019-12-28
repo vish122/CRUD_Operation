@@ -1,0 +1,58 @@
+<br>
+<!-- <table>
+    <thead>
+        
+        <th>Code</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Annual Salary</th>
+        <th>Position</th>
+        <th>Designation</th>
+        <th>Experience in Yrs</th>
+        <th>Date of Birth</th>
+        
+</thead>
+    <tbody> -->
+        <!--     
+    <tr *ngFor="let e of emp">{{e.code}}
+    <td>{{e.name | titlecase| salutation:e.gender }}</td>
+    <td>{{e.gender | titlecase }}</td>
+    <td>{{e.salary | currency:'USD':true}}</td>
+    <td>{{e.pos | position:e.exp }}</td>
+    <td>{{e.deg}}</td>
+    <td>{{e.exp}}</td>
+    <td>{{e.dob | date:shortDate | uppercase}}</td>
+    </tr> -->
+
+        <!-- <tr>
+            <td>{{emp.code}}</td>
+            <td>{{emp.name | titlecase| salutation:emp.gender }}</td>
+            <td>{{emp.gender | titlecase }}</td>
+            <td>{{emp.salary | currency:'USD':true}}</td>
+            <td>{{emp.pos | position:emp.exp }}</td>
+            <td>{{emp.deg}}</td>
+            <td>{{emp.exp}}</td>
+            <td>{{emp.dob | date:shortDate | uppercase}}</td>
+          
+        </tr>
+    </tbody>
+</table> -->
+
+    <ul *ngIf="emp">
+        <li>Code : {{emp.code}}</li>
+        <li>Name : {{emp.name | titlecase| salutation:emp.gender }}</li>
+        <li>Gender : {{emp.gender | titlecase }}</li>
+        <li>Annual Salary : {{emp.salary | currency:'USD':true}}</li>
+        <li>Position : {{emp.pos | position:emp.exp }}</li>
+        <li>Designation : {{emp.deg}}</li>
+        <li>Experience in Yrs : {{emp.exp}}</li>
+        <li>Date of Birth : {{emp.dob | date:shortDate | uppercase}}</li>
+    </ul>
+
+    <br><br>
+    <input type="button" class="btn btn-info" value="Previous Employee" (click)="previousemp()"> <span>....</span>
+    <input type="button" class="btn btn-info" value="Next Employee" (click)="nextemp()">
+
+
+<br><br>
+<input type="button" class="btn btn-primary" value="Back to emplist" (click)="onBackButtonClick()" />
